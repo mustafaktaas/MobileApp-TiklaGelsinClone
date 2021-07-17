@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="xamarintiklagelsin.Views.AddAdressPage"
+             Title="Adres bilgilerim"  >
+
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="1*"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+
+
+        <ScrollView HeightRequest="50" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" >
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="0"  Grid.Row="0"  Scale="0.9" BackgroundColor="Transparent" 
+                ImageSource="back2.png" Margin="0,30,150,0" Clicked="Button_Clicked">
+                </Button>
+
+                <Image Grid.Row="0" Grid.Column="0" HorizontalOptions="CenterAndExpand" Source="tiklagelsinlogo.png"
+               Margin="0,30,-200,0" Scale="2.5">
+                </Image>
+
+                <Entry Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Placeholder="Şehir Giriniz">
+                    
+                </Entry>
+
+                <Entry Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" Placeholder="İlçe Giriniz">
+
+                </Entry>
+
+                <Entry Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" Placeholder="Mahalle Giriniz">
+
+                </Entry>
+
+                <Entry Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4" Placeholder="Adres Başlığı">
+
+                </Entry>
+
+                <Entry Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="5" Placeholder="Cadde">
+
+                </Entry>
+
+                <Entry Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="6" Placeholder="Sokak">
+
+                </Entry>
+
+                <Entry Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="7" Placeholder="Bina No" >
+
+                </Entry>
+
+                <Entry Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="8" Placeholder="Daire No">
+
+                </Entry>
+
+                <Entry Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="9" Placeholder="Bina Adı">
+
+                </Entry>
+
+                <Entry Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="10" Placeholder="Adresi Tarif Et">
+
+                </Entry>
+
+                <Entry Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="11" Placeholder="Telefon Numarası">
+
+                </Entry>
+
+
+
+
+
+            </Grid>
+
+          
+
+        </ScrollView>
+
+        <Button  x:Name="Btn_Adres_Kyt"  Clicked="Btn_Adres_Kyt_Clicked" Text="Kaydet" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" 
+                BackgroundColor="#eb002f"  WidthRequest="350" HeightRequest="80"
+                CornerRadius="52" VerticalOptions="Fill" HorizontalOptions="Center" 
+                TextColor="White" FontAttributes="Bold" Margin="0,15,0,10">
+
+        </Button>
+
+    </Grid>
+
+
+</ContentPage>

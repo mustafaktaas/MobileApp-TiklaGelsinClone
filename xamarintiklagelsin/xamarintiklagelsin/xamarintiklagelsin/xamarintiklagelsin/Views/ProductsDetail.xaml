@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:helpers="clr-namespace:xamarintiklagelsin.Helpers"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" 
+             x:Class="xamarintiklagelsin.Views.ProductsDetail">
+    <ContentPage.Content>
+
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="55"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="210"/>
+                    <ColumnDefinition Width="20"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="0"  Grid.Row="0"  Scale="0.9" BackgroundColor="Transparent" 
+                ImageSource="back2.png" Clicked="Button_Clicked">
+                </Button>
+
+                <Image Grid.Row="0" Grid.Column="1" HorizontalOptions="CenterAndExpand" Source="https://d3vkdqr0qjxhag.cloudfront.net/Bk_Logo501x542_4e2be66b64.png" Scale="0.8">
+                </Image>
+
+
+            </Grid>
+
+            <Image Grid.Row="1" Source="{Binding SelectedFoodItem.ImageUrl}" VerticalOptions="Start" Aspect="AspectFit">
+                
+            </Image>
+
+            <Label Grid.Row="2" Text="{Binding SelectedFoodItem.FoodItemName}" FontSize="30" TextColor="Black" FontAttributes="Bold" Margin="20,0,0,0">
+                
+            </Label>
+
+            <StackLayout Grid.Row="3" Spacing="10" Padding="10" VerticalOptions="Start">
+
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <Label Text="ÜrünNo : " FontSize="Subtitle"/>
+                    <Label Text="{Binding SelectedFoodItem.FoodItemID}" FontSize="Subtitle"/>
+
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <Label Text="Adı : " FontSize="Subtitle"/>
+                    <Label Text="{Binding SelectedFoodItem.FoodItemName}" FontSize="Subtitle"/>
+
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <Label Text="Puan : " FontSize="Subtitle"/>
+                    <Label Text="{Binding SelectedFoodItem.Rating,StringFormat='{0}/10'}" FontSize="Subtitle"/>
+
+                </StackLayout>
+
+            </StackLayout>
+
+            <Grid Grid.Row="4" Scale="0.9">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="0" Text="-" TextColor="White" BackgroundColor="#ec1c32" FontSize="30" HorizontalOptions="End"
+                        Command="{Binding DecrementOrderCommand}">
+
+                </Button>
+
+                <Entry Text="{Binding TotalQuantity}" HorizontalTextAlignment="Center" FontSize="30" Grid.Column="1"/>
+
+                <Button Grid.Column="2" Text="+" TextColor="White" BackgroundColor="#ec1c32" FontSize="30" HorizontalOptions="End"
+                        Command="{Binding IncrementOrderCommand}" Margin="0,0,50,0">
+
+                </Button>
+
+                <StackLayout Orientation="Horizontal" Grid.Row="5" Margin="0,-20,0,0">
+
+
+                    <Button Text="Sepete Ekle" BackgroundColor="LimeGreen" WidthRequest="300" HorizontalOptions="Center"
+                                Command="{Binding AddToCartCommand}" HeightRequest="50" Margin="50,0,0,0">
+
+                    </Button>
+
+
+                </StackLayout>
+
+
+            </Grid>
+    
+
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

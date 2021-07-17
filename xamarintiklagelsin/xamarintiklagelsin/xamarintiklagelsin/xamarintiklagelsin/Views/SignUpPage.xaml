@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="xamarintiklagelsin.Views.SignUpPage"
+             xmlns:vm="clr-namespace:xamarintiklagelsin.ViewModels"
+             Title="Kayıt Ol">
+
+
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
+
+        </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+        <Button Grid.Column="0"  Grid.Row="0"  Scale="0.9" BackgroundColor="Transparent" 
+                ImageSource="back2.png" Margin="0,30,150,0" Clicked="Button_Clicked">
+        </Button>
+
+        <Image Grid.Row="0" Grid.Column="0" HorizontalOptions="CenterAndExpand" Source="tiklagelsinlogo.png"
+               Margin="0,30,-180,0" Scale="5">
+        </Image>
+
+        <Entry Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Placeholder="Ad" Text="{Binding Ad}">
+
+            </Entry>
+
+        <Entry Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" Placeholder="Soyad" Text="{Binding Soyad}">
+
+            </Entry>
+
+        <Entry Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" Placeholder="E Posta" Text="{Binding EMail}">
+
+            </Entry>
+
+        <Entry Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4" Placeholder="Tel No" Text="{Binding PhoneNo}">
+
+             </Entry>
+
+        <Entry Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="5" Placeholder="Kullanıcı Adı" Text="{Binding Username}">
+
+             </Entry>
+
+        <Entry Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="6" Placeholder="Şifre" Text="{Binding Password}" IsPassword="True">
+
+                </Entry>
+
+          
+
+
+
+        <Button  x:Name="Btn_Kyt"  Clicked="Btn_Kyt_Clicked" Text="Kaydol" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="7" 
+                BackgroundColor="#eb002f"  WidthRequest="350" HeightRequest="80"
+                CornerRadius="52" VerticalOptions="Fill" HorizontalOptions="Center" 
+                TextColor="White" FontAttributes="Bold" Margin="0,15,0,10" Command="{Binding RegisterCommand}">
+
+         </Button>
+
+        </Grid>
+
+
+ 
+
+
+
+</ContentPage>

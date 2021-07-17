@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="xamarintiklagelsin.LoginPage"
+             xmlns:vm="clr-namespace:xamarintiklagelsin.ViewModels"
+             BackgroundColor="White"
+             >
+
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".6*"/>
+            <RowDefinition Height=".2*"/>
+            <RowDefinition Height=".3*"/>
+            <RowDefinition Height=".5*"/>
+            <RowDefinition Height=".4*"/>
+            <RowDefinition Height=".4*"/>
+            <RowDefinition Height=".4*"/>
+            <RowDefinition Height=".4*"/>
+            <RowDefinition Height=".3*"/>
+            <RowDefinition Height=".3*"/>
+           
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+
+        <Image Source="tiklagelsinlogo" BackgroundColor="White"
+               Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Scale="0.5" />
+
+        <Label Text="Tıkla Gelsin'e " Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" HorizontalOptions="Center" 
+               FontSize="30" TextColor="#473f3f" FontAttributes="Bold" />
+
+        <Label Text="Hoşgeldiniz " Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" HorizontalOptions="Center" 
+               FontSize="30" TextColor="#473f3f" FontAttributes="Bold"/>
+
+        <Image Source="WhopperJR" BackgroundColor="White"
+               Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Scale="1.2" />
+
+        <Entry x:Name="Entry_PhoneNo" Text="{Binding Username}" Placeholder="Kullanıcı Adını Giriniz" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4"/>
+
+        <Entry x:Name="Entry_Password" Text="{Binding Password}" Placeholder="Şifrenizi Giriniz"  Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="5" IsPassword="True"/>
+ 
+        <Button x:Name="Btn_giris" Clicked="Btn_giris_Clicked"   Text="Giriş Yap" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="6" 
+                BackgroundColor="#eb002f"  WidthRequest="350" HeightRequest="80"
+                CornerRadius="52" VerticalOptions="Center" HorizontalOptions="Center" 
+                TextColor="White" FontAttributes="Bold" Margin="0,15,0,0" Command="{Binding LoginCommand}"/>
+
+        <Button x:Name="Btn_kayıt" Clicked="Btn_kayıt_Clicked"  Text="Kayıt Ol" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="7" 
+                BackgroundColor="#eb002f"  WidthRequest="350" HeightRequest="80"
+                CornerRadius="52" VerticalOptions="Center" HorizontalOptions="Center" 
+                TextColor="White" FontAttributes="Bold" Margin="0,15,0,0" />
+
+
+
+    </Grid>
+</ContentPage>

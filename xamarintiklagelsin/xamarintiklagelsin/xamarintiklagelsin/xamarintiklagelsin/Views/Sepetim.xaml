@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="True"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" 
+             xmlns:helpers="clr-namespace:xamarintiklagelsin.Helpers"
+             xmlns:vm="clr-namespace:xamarintiklagelsin.ViewModels"
+             x:Class="xamarintiklagelsin.Views.Sepetim">
+
+    <ContentPage.BindingContext>
+        <vm:CartViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+
+        <Grid>
+             <Grid.RowDefinitions>
+                <RowDefinition Height="55"/>
+                <RowDefinition Height="400"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="210"/>
+                    <ColumnDefinition Width="20"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="0"  Grid.Row="0"  Scale="0.9" BackgroundColor="Transparent" 
+                ImageSource="back2.png" Clicked="Button_Clicked">
+                </Button>
+
+                <Label Grid.Row="0" Grid.Column="1" HorizontalOptions="CenterAndExpand" Text="Sepetim" TextColor="#ec1c32" Scale="1.4" Margin="0,20,0,0">
+                </Label>
+
+            </Grid>
+            
+          
+
+            <pancake:PancakeView Grid.Row="1" CornerRadius="60,60,0,0" BackgroundColor="WhiteSmoke">
+
+                <ListView x:Name="ListViewCartItems" SeparatorVisibility="Default" ItemsSource="{Binding CartItems}"
+                          HasUnevenRows="True" Header="" Margin="20,15,0,0">
+                    <ListView.HeaderTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="ID" TextColor="#ec1c32" Grid.Column="0" FontSize="Subtitle">
+                                    
+                                </Label>
+                                <Label Text="İsim" TextColor="#ec1c32" Grid.Column="1" FontSize="Subtitle">
+
+                                </Label>
+                                <Label Text="Fiyat" TextColor="#ec1c32" Grid.Column="2" FontSize="Subtitle">
+
+                                </Label>
+                                <Label Text="Miktar" TextColor="#ec1c32" Grid.Column="3" FontSize="Subtitle">
+
+                                </Label>
+                                <Label Text="Tutar" TextColor="#ec1c32" Grid.Column="4" FontSize="Subtitle">
+
+                                </Label>
+
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.HeaderTemplate>
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Label Text="{Binding ProductId}" TextColor="Black" Grid.Column="0" FontSize="Body">
+                                            
+                                        </Label>
+                                        
+                                        <Label Text="{Binding ProductName}" TextColor="Black" Grid.Column="1" FontSize="Body">
+
+                                        </Label>
+                                        <Label Text="{Binding Price}" TextColor="Black" Grid.Column="2" FontSize="Body">
+
+                                        </Label>
+                                        <Label Text="{Binding Quantity}" TextColor="Black" Grid.Column="3" FontSize="Body">
+
+                                        </Label>
+                                        <Label Text="{Binding Cost}" TextColor="Black" Grid.Column="4" FontSize="Body">
+
+                                        </Label>
+
+                                    </Grid>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    
+                </ListView>
+                
+            </pancake:PancakeView>
+
+            <Label Text="{Binding TotalCost,StringFormat='Toplam Fiyat : ₺{0}'}" Grid.Row="2" HorizontalTextAlignment="Center" FontSize="Title"
+                   TextColor="#ec1c32">
+
+            </Label>
+
+            <Button Text="Ödemeye Geç" Grid.Row="4" TextColor="White" Clicked="Button_Clicked_1"
+                    HorizontalOptions="Center" CornerRadius="20" BackgroundColor="#ec1c32">
+                
+            </Button>
+
+            <Button Text="Sepeti Temizle" Grid.Row="3" TextColor="White" Command="{Binding SepetTemizleCommand}"
+                    HorizontalOptions="Center" CornerRadius="20" BackgroundColor="#ec1c32">
+
+            </Button>
+
+        </Grid>
+
+    </ContentPage.Content>
+        
+</ContentPage>

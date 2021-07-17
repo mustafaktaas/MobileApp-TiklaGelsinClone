@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="xamarintiklagelsin.Views.KartlaOde"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="True"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" 
+             xmlns:helpers="clr-namespace:xamarintiklagelsin.Helpers"
+             xmlns:vm="clr-namespace:xamarintiklagelsin.ViewModels">
+
+    <ContentPage.BindingContext>
+        <vm:CartViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="55"/>
+                <RowDefinition Height="55"/>
+                <RowDefinition Height="400"/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="210"/>
+                    <ColumnDefinition Width="20"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="0"  Grid.Row="0"  Scale="0.9" BackgroundColor="Transparent" 
+                ImageSource="back2.png" Clicked="Button_Clicked">
+                </Button>
+
+                <Label Grid.Row="0" Grid.Column="1" HorizontalOptions="CenterAndExpand" Text="Ödeme" TextColor="#ec1c32" Scale="1.4" Margin="0,20,0,0">
+                </Label>
+
+            </Grid>
+
+            <Label Grid.Row="1"  HorizontalOptions="CenterAndExpand" Text="Kart Bilgileri" TextColor="#ec1c32" FontSize="18" Scale="1.4" Margin="-240,10,0,0">
+            </Label>
+
+            <pancake:PancakeView Grid.Row="2" >
+                
+            <Grid>
+                     
+                <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Text="Kart Sahibinin Adı:" FontSize="Subtitle">
+                        
+                    </Label>
+                    <Entry Grid.Row="1" >
+                        
+                    </Entry>
+                    <Label Grid.Row="2" Text="Kart Numarası:" FontSize="Subtitle">
+
+                    </Label>
+                    <Entry Grid.Row="3" >
+
+                    </Entry>
+                    <Label Grid.Row="4" Text="Son Kullanma Tarihi:" FontSize="Subtitle">
+
+                    </Label>
+                    <Entry Grid.Row="5" >
+
+                    </Entry>
+                    <Label Grid.Row="6" Text="Cvc Numarası:" FontSize="Subtitle">
+
+                    </Label>
+                    <Entry Grid.Row="7" >
+
+                    </Entry>
+
+
+                </Grid>
+                
+           </pancake:PancakeView>
+
+            <Button Text="Siparişi Tamamla" Grid.Row="3" TextColor="White" Command="{Binding PlaceOrdersCommand}"
+                    HorizontalOptions="Center" CornerRadius="20" BackgroundColor="#ec1c32" ScaleY="1">
+
+            </Button>
+
+        </Grid>
+
+    </ContentPage.Content>
+    
+</ContentPage>
+    

@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="xamarintiklagelsin.Views.HesabimGelAl">
+
+    <ScrollView >
+        
+        <Grid RowSpacing="0" Padding="0,10" HorizontalOptions="Start" VerticalOptions="Start">
+            <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="130"/>
+                <RowDefinition Height="130"/>
+                <RowDefinition Height="130"/>
+            <RowDefinition Height="60"/>
+
+         </Grid.RowDefinitions>
+         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="200"/>
+             
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Hesap Bilgilerim" Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="0" 
+               FontSize="18" TextColor="#00aeef" FontAttributes="Bold" Margin="15,25,15,0" />
+
+            <Frame Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="1" Grid.RowSpan="1" CornerRadius="30" Margin="0,0,0,0"  HasShadow="True" Scale="0.95" >
+                <Image Source="profil.png" Scale="1.2" >
+
+                </Image>
+            </Frame>
+
+            <Frame Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="1" CornerRadius="30" HasShadow="True" Margin="0,0,0,0" Scale="0.95">
+                <Image Source="siparislerim.png" Scale="1.2" >
+
+                </Image>
+            </Frame>
+
+            <Frame Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="2" CornerRadius="30"  HasShadow="True" Margin="0,0,0,0" Scale="0.95">
+
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </Frame.GestureRecognizers>
+
+                <Image Source="adreslerim.png" Scale="1.2" >
+
+                </Image>
+            </Frame>
+
+            <Frame Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="2" CornerRadius="30" HasShadow="True" Margin="0,0,0,0" Scale="0.95">
+                <Image Source="kuponlarim.png" Scale="1.2" >
+
+                </Image>
+            </Frame>
+
+            <Frame Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="3" CornerRadius="30" HasShadow="True" Margin="0,0,0,0" Scale="0.95" >
+                <Image Source="canlidestek.png" Scale="1.2">
+
+                </Image>
+            </Frame>
+
+            <Frame Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="3" CornerRadius="30"  HasShadow="True" Margin="0,0,0,0" Scale="0.95">
+                <Image Source="telefon.png"  Scale="1.2">
+
+                </Image>
+            </Frame>
+
+            <Button Clicked="Button_Clicked" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4" ScaleX="0.5" ScaleY="0.5" ImageSource="exit.png" BackgroundColor="Transparent" Margin="0,20,0,0">
+                
+                
+            </Button>
+
+            <Image Source="neyediginibil.PNG" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="5" ScaleX="1.15" ScaleY="1"> 
+                
+            </Image>
+
+
+
+
+
+        </Grid>
+        
+    </ScrollView>
+    
+   
+
+
+
+</ContentPage>

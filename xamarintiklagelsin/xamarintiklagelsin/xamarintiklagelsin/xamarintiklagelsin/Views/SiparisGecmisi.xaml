@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="True"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" 
+             xmlns:helpers="clr-namespace:xamarintiklagelsin.Helpers"
+             xmlns:vm="clr-namespace:xamarintiklagelsin.ViewModels"
+             x:Class="xamarintiklagelsin.Views.SiparisGecmisi"
+             BackgroundColor="#ec1c32"
+             Visual="Material">
+    <ContentPage.BindingContext>
+        <vm:OrdersHistoryViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Button  Grid.Row="0" ScaleX="0.08" ScaleY="0.3" BackgroundColor="Transparent" 
+                ImageSource="https://cdn0.iconfinder.com/data/icons/controls-add-on/48/v-38-512.png" Clicked="Button_Clicked" Margin="-400,0,0,0">
+            </Button>
+
+            <Label Text="Tıkla Gelsin" FontSize="40" TextColor="White" FontFamily="CabinSketch" HorizontalOptions="Center" VerticalOptions="Start">
+                
+            </Label>
+
+            <Label Text=" Sipariş Geçmişiniz " FontSize="Subtitle" Margin="20,0" TextColor="White" HorizontalOptions="Center" VerticalOptions="End">
+
+            </Label>
+
+            <pancake:PancakeView BackgroundColor="White" CornerRadius="40,40,0,0" Grid.Row="1">
+
+                <Grid>
+                    <ActivityIndicator IsRunning="{Binding IsBusy}" 
+                                       WidthRequest="50" HeightRequest="50" 
+                                       Color="#ec1c32" IsVisible="{Binding IsBusy}"
+                                       VerticalOptions="Center" HorizontalOptions="Center"/>
+
+                    <CollectionView ItemsSource="{Binding OrderDetails}"
+                                    IsGrouped="True" Margin="25,10,25,0">
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout ItemSpacing="10" Orientation="Vertical"/>
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.EmptyViewTemplate>
+                            <DataTemplate>
+                                <Label Text="Hiç Siparişiniz Bulunmamaktadır" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </DataTemplate>
+                        </CollectionView.EmptyViewTemplate>
+                        <CollectionView.GroupHeaderTemplate>
+                            <DataTemplate>
+                                <Grid BackgroundColor="LightSlateGray" Padding="2">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Label Text="Sipariş No" HorizontalOptions="Center" 
+                                           FontSize="Subtitle" TextColor="White" Grid.Row="0"/>
+                                    <Label Text="{Binding OrderId}" HorizontalOptions="Center" 
+                                           FontSize="Body" TextColor="White" Grid.Row="1"/>
+
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.GroupHeaderTemplate>
+                        <CollectionView.GroupFooterTemplate>
+                            <DataTemplate>
+                                <StackLayout BackgroundColor="White">
+                                    <Label Text="{Binding TotalCost, StringFormat='Toplam Fiyat : ₺{0}'}" TextColor="Black" FontAttributes="Bold"/>
+                                    <BoxView BackgroundColor="#ec1c32" HeightRequest="3">
+                                        
+                                    </BoxView>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.GroupFooterTemplate>
+
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame Padding="10" HasShadow="True" Margin="10" BorderColor="LightSlateGray" >
+
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+
+                                        <Label Grid.Row="0">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Sipariş Detayı No : " />
+                                                    <Span Text="{Binding OrderDetailId}" TextColor="Black" FontAttributes="Bold"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+
+                                        <Label Grid.Row="1">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Ürün Adı : " />
+                                                    <Span Text="{Binding ProductName}" TextColor="Black" FontAttributes="Bold"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+
+                                        <Label Grid.Row="2">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Miktarı : " />
+                                                    <Span Text="{Binding Quantity}" TextColor="Black" FontAttributes="Bold"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+
+                                        <Label Grid.Row="3">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Fiyatı : " />
+                                                    <Span Text="{Binding Price,StringFormat='₺{0}'}" TextColor="Black" FontAttributes="Bold"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+
+                                    </Grid>
+                                    
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                        
+                    </CollectionView>
+
+                </Grid>
+                
+            </pancake:PancakeView>
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

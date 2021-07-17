@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="xamarintiklagelsin.Views.SiparisGelAl"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
+
+    <Grid>
+        
+        <Grid.RowDefinitions>
+        <RowDefinition Height="70"/>
+        <RowDefinition Height="Auto"/>
+
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+
+        <Label Text="Siparişlerim" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" 
+               FontSize="18" TextColor="#00aeef" FontAttributes="None" Margin="15,25,15,0" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
+            
+        </Label>
+
+     
+
+    </Grid>
+    
+    
+
+</ContentPage>

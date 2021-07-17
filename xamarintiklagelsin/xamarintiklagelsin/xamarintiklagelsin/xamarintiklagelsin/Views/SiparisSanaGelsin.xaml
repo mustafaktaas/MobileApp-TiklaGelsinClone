@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="True"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" 
+             xmlns:helpers="clr-namespace:xamarintiklagelsin.Helpers"
+             xmlns:vm="clr-namespace:xamarintiklagelsin.ViewModels"
+             x:Class="xamarintiklagelsin.Views.SiparisSanaGelsin"
+             Visual="Material">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="550"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="55"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Grid.Row="0"  BackgroundColor="Transparent" Margin="0,20,0,0"
+                ImageSource="back2.png" Clicked="Button_Clicked">
+        </Button>
+
+        <Label Text="Teşekkürler" Grid.Column="1" Grid.Row="0" 
+               FontSize="18" TextColor="#ec1c32" FontAttributes="None" Margin="15,25,65,0"
+               VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" >
+
+        </Label>
+            
+        </Grid>
+             
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="80"/>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+            </Grid.ColumnDefinitions>
+            <Label Text="Siparişiniz İçin Teşekkürler..."  Grid.Row="0" VerticalOptions="Center" FontSize="25"/>
+            <Label Text="Siparişiniz Hakkında Bilgi Almak İçin Hesabım Kısmından Sipariş Geçmişi Kısmından Bilgi Edinebilirsiniz."  Grid.Row="1"
+                   FontSize="18"/>
+
+            <Button Text="Sipariş Geçmişi"  Grid.Row="2" 
+                BackgroundColor="#eb002f" CornerRadius="52" VerticalOptions="Fill" HorizontalOptions="Center" 
+                TextColor="White" FontAttributes="Bold" Margin="0,15,0,10" Clicked="Button_Clicked_1">
+
+            </Button>
+
+
+        </Grid>
+
+    </Grid>
+
+</ContentPage>

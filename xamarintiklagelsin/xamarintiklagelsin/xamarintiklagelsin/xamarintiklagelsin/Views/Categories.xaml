@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="True"
+             xmlns:helpers="clr-namespace:xamarintiklagelsin.Helpers"
+             xmlns:vm="clr-namespace:xamarintiklagelsin.ViewModels"
+             x:Class="xamarintiklagelsin.Views.Categories">
+
+    <ContentPage.BindingContext>
+        <vm:FoodItemsViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <Grid Margin="-5,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="55"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="210"/>
+                    <ColumnDefinition Width="20"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="0"  Grid.Row="0"  Scale="0.9" BackgroundColor="Transparent" 
+                ImageSource="back2.png" Clicked="Button_Clicked">
+                </Button>
+
+                <Image Grid.Row="0" Grid.Column="1" HorizontalOptions="CenterAndExpand" Source="https://d3vkdqr0qjxhag.cloudfront.net/Bk_Logo501x542_4e2be66b64.png" Scale="0.8">
+                </Image>
+
+                <ImageButton Grid.Column="2"  Grid.Row="0"  Margin="0,0,-200,0" Scale="0.5" BackgroundColor="Transparent" Source="sepetim1kck.png" 
+                             Command="{Binding ViewCartCommand}">
+                </ImageButton>
+
+                <Label Text="{Binding UserCartItemsCounts}" Grid.Row="0" Grid.Column="2" Margin="0,0,-50,0" HorizontalOptions="CenterAndExpand">
+                    
+                </Label>
+
+            </Grid>
+
+            <Grid Grid.Row="1" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <SearchBar Grid.Column="0" Placeholder="Ara" BackgroundColor="Transparent" HorizontalOptions="Start" Text="{Binding SearchText}">
+                    
+                </SearchBar>
+                <ImageButton Grid.Column="1" Source="search.png" HorizontalOptions="End" BackgroundColor="Transparent" Margin="0,0,20,0" Command="{Binding SearchViewCommand}" Scale="0.9">
+                    
+                </ImageButton>
+
+            </Grid>
+
+            <Label Grid.Row="2" Text="Kategoriler" FontSize="25" FontAttributes="Bold" Margin="20,10,0,0" TextColor="#ec1c32">
+
+            </Label>
+
+            <CollectionView ItemsSource="{Binding Categories}"
+                            Margin="0,20"
+                            WidthRequest="200"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalScrollBarVisibility="Never"
+                            ItemsLayout="VerticalList"
+                            SelectionChanged="CollectionView_SelectionChanged"
+                            SelectionMode="Single"
+                            Grid.Row="3"
+                            >
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Frame HasShadow="True" BackgroundColor="Transparent" CornerRadius="20">
+                                <Label Text="{Binding CategoryName}" HorizontalTextAlignment="Start" TextColor="Black" FontAttributes="Bold">
+                                    
+                                </Label>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

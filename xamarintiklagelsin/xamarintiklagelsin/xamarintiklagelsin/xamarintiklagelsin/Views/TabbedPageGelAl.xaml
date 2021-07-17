@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:xamarintiklagelsin="clr-namespace:xamarintiklagelsin.Views"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            x:Class="xamarintiklagelsin.Views.TabbedPageGelAl"     
+            SelectedTabColor="#00aeef"
+            UnselectedTabColor="LightGray"
+            >
+  <!--Pages can be added as references or inline-->  
+
+    <xamarintiklagelsin:AnasayfaGelAl Title="Anasayfa" IconImageSource="Anasayfa.png"></xamarintiklagelsin:AnasayfaGelAl>
+    <xamarintiklagelsin:SiparisGelAl Title="Siparislerim" IconImageSource="Siparis.png"></xamarintiklagelsin:SiparisGelAl>
+    <xamarintiklagelsin:HesabimGelAl Title="Hesabım" IconImageSource="hesabim.png"></xamarintiklagelsin:HesabimGelAl>
+
+</TabbedPage>
