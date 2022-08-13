@@ -1,5 +1,5 @@
 # MobileApp-TiklaGelsinClone
-TiklaGelsin clone app with Xamarin.
+TiklaGelsin clone app with Xamarin.I made this project for Object Oriented Programming lesson.
 
 
 1-After running the application and passing the login page, Adres Ekle->Kaydet->Manage Cart to run the Cart section.
